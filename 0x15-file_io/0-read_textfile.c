@@ -22,7 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	rd = read(fd, buffer, letters);
 	wd = write(STDOUT_FILENO, buffer, rd);
-	free(buffer);
-	close(fd);
 	return (wd);
+	close(fd);
+	free(buffer);
 }
