@@ -12,7 +12,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer;
-	ssize_t fd;
+	int fd;
 	ssize_t rd;
 	ssize_t wd;
 
@@ -22,7 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	rd = read(fd, buffer, letters);
 	wd = write(STDOUT_FILENO, buffer, rd);
-	return (wd);
-	close(fd);
 	free(buffer);
+	close(fd);
+	return (wd);
 }
