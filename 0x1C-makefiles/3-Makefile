@@ -1,3 +1,5 @@
+# A makefile with additional tasks
+
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
@@ -11,9 +13,10 @@ clean:
 	${RM} *~ ${NAME}
 
 oclean:
-	${RM} ${NAME}
+	${RM} ${OBJ}
 
-fclean: clean oclean
+fclean:
+	${RM} *~ ${NAME} ${OBJ}
 
 re: fclean all
 
