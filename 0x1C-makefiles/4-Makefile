@@ -1,0 +1,22 @@
+# A make file t tasks to compile files
+CC = gcc
+SRC = main.c school.c
+OBJ = main.o school.o
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+all:
+	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
+
+clean:
+	${RM} *~ ${NAME}
+
+oclean:
+	${RM} ${OBJ}
+
+fclean:
+	${RM} *~ ${NAME} ${OBJ}
+
+re: fclean
+	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
