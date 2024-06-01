@@ -1,4 +1,7 @@
 # A make file t tasks to compile files
+#
+.PHONY: clean oclean fclean re
+
 CC = gcc
 SRC = main.c school.c
 OBJ = ${SRC:%.c = %.o}
