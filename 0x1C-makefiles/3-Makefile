@@ -18,6 +18,5 @@ oclean:
 fclean:
 	${RM} *~ ${NAME} ${OBJ}
 
-re: fclean
-	${CC} ${OBJ} -o ${NAME}
+re: fclean all
 
